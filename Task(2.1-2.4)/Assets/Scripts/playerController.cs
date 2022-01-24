@@ -25,5 +25,9 @@ public class playerController : MonoBehaviour
         transform.Translate(Vector3.right* horizontalInputspeed* Time.deltaTime *horizontalInput);
         
     }
-
+    private void OnCollisionEnter(Collision other){
+        if(other.gameObject.CompareTag("Block")){
+           Debug.Log("Game Over");
+       }
+    }
 }
